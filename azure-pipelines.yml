@@ -21,7 +21,6 @@ variables:
 
   appName: 'devopsautopilotai'
   resourceGroup: 'devops-auto-pilot'
-- group: demo
 
 stages:
 - stage: Build

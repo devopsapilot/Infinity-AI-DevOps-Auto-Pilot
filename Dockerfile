@@ -12,13 +12,14 @@ RUN npm install
 # Copy Prisma schema before running `npx prisma generate`
 COPY prisma ./prisma
 
+
+
+# Generate Prisma client
+RUN npx prisma generate
 # Copy the rest of the application code
 COPY . .
 
 COPY .env.local ./
-
-# Generate Prisma client
-RUN npx prisma generate
 
 # Build Next.js project
 # RUN npm run build

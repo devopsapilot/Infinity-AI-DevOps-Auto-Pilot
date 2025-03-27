@@ -21,8 +21,12 @@ COPY . .
 
 COPY .env.local ./
 
+COPY .env.local ./.env
 # Print .env.local content (For Debugging)
 RUN cat .env.local
+
+# List files after copying application code
+RUN ls -la /app
 
 # Build Next.js project
 # RUN npm run build

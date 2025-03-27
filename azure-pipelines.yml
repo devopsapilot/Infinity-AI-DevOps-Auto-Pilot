@@ -56,5 +56,5 @@ stages:
             azureSubscription: 'Free Trial (90483aec-6f6c-4ac5-95fd-c8bcd9eded29)'  # Azure Service Connection
             appName: 'devopsautopilotai'  # Your App Service name
             resourceGroupName: 'devops-auto-pilot'  # Resource group containing App Service
-            imageName: 'myreactacr.azurecr.io/devopsstarterfrontend:$(Build.BuildId)'  # Image from ACR with tag
+            imageName: 'myreactacr.azurecr.io/devopsautopilot:$(Build.BuildId)'  # Image from ACR with tag
             slotName: 'production'  # Can be changed to another slot (e.g., staging) if needed

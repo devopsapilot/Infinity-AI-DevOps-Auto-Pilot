@@ -37,6 +37,15 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - script: |
+        # Write the values from the variable group into the .env file
+        echo "DATABASE_URL=$(DATABASE_URL)" > $(Build.SourcesDirectory)/.env.local
+        echo "NEXT_PUBLIC_API_KEY=$(NEXT_PUBLIC_API_KEY)" >> $(Build.SourcesDirectory)/.env.local
+        displayName: 'Write Environment Variables to .env.local'
+    - script: |
+        # Display the contents of the .env file
+        cat $(Build.SourcesDirectory)/.env.local
+        displayName: 'Display .env File Content'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:

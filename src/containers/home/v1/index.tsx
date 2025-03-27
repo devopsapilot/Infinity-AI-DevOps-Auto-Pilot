@@ -16,9 +16,11 @@ import Page1 from "./pages/page1";
 import Page2 from "./pages/page2";
 import Page0 from "./pages/page0";
 import Page3 from "./pages/page3";
+import mainLogo from "../../../assets/logo/autopilotLogoMain.png"
+import { logout } from "@/redux/reducers/appSlice";
+import { useRouter } from "next/router";
 
 const { Header, Content, Footer, Sider } = Layout;
-
 const items = [
   {
     key: "page1",
@@ -30,16 +32,16 @@ const items = [
     icon: <CompassOutlined />,
     label: "Workspace",
   },
-  {
-    key: "page3",
-    icon: <RobotOutlined />,
-    label: "Copilot",
-  },
-  {
-    key: "page4",
-    icon: <SettingOutlined />,
-    label: "Settings",
-  },
+  // {
+  //   key: "page3",
+  //   icon: <RobotOutlined />,
+  //   label: "Copilot",
+  // },
+  // {
+  //   key: "page4",
+  //   icon: <SettingOutlined />,
+  //   label: "Settings",
+  // },
 ];
 
 const Home = () => {
@@ -48,6 +50,18 @@ const Home = () => {
     icon: <EditOutlined />,
     label: "New Chat",
   });
+  const router = useRouter();
+
+  const handleLogout = () => {
+    // Clear user data from sessionStorage
+    sessionStorage.removeItem("userProfile");
+
+    // Dispatch the logout action
+    dispatch(logout());
+
+    // Redirect to the login page
+    router.push("/login");
+  };
 
   const theme = useSelector((state: RootState) => state.app.theme);
   const appInfo = useSelector((state: RootState) => state.app.appInfo);
@@ -57,10 +71,11 @@ const Home = () => {
   const dispatch = useDispatch();
 
   return (
-    <Layout className={`${styles.homeContainer} bg-primary primaryText`}>
+    <Layout className={`${styles.homeContainer}  primaryText`} style={{ backgroundColor: '#FFDAB9' }} >
       <Sider
         theme={theme === "dark" ? "dark" : "light"}
         className={styles.siderContainer}
+        style={{ backgroundColor: '#FFDAB9' }} 
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
@@ -73,7 +88,7 @@ const Home = () => {
         <div className={styles.rootFlexCont}>
           <div>
             <div className={styles.logoContainer}>
-              {appInfo && <img src={appInfo?.logo} className={styles.logo} />}
+              {appInfo && <img src={mainLogo.src} className={styles.logo} />}
             </div>
 
             <Menu
@@ -97,9 +112,9 @@ const Home = () => {
               <ThemeToggle />
             </div> */}
 
-            <div className={styles.flexContainer}>
+            <div className={styles.flexContainer} style={{ backgroundColor: '#FFDAB9' }} >
               <span className={styles.userName}>{userInfo?.name}</span>
-              <Button className={styles.logoutButton}>
+              <Button className={styles.logoutButton}  onClick={handleLogout}>
                 <LogoutOutlined />
               </Button>
             </div>

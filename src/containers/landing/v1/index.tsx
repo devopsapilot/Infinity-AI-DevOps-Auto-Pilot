@@ -22,7 +22,9 @@ import Features4 from "@/assets/illustrations/features-4.png";
 
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-import b from "../../../assets/logo/devopsAPLogo.jpg"
+import heroLogo from "../../../assets/logo/devopsAPLogo.jpg"
+import mainLogo from "../../../assets/logo/autopilotLogoMain.png"
+
 
 const { Meta } = Card;
 
@@ -37,7 +39,7 @@ const Landing = () => {
         <div className={styles.headerContainer}>
           {appInfo && (
             <>
-              <img src={b.src} className={styles.logo} />
+              <img src={mainLogo.src} className={styles.logo} />
               <p className={styles.appDescription}>{appInfo.description}</p>
               <div className={styles.buttonContainer}>
                 <Button
@@ -62,7 +64,7 @@ const Landing = () => {
 
         <Image
           className={styles.heroImage}
-          src={b}
+          src={heroLogo}
           alt="Hero Illustration"
           layout="responsive"
         />
@@ -157,7 +159,7 @@ const Landing = () => {
           <div>
             <p className={styles.description}>
               Proudly collaborating with innovative minds to push the boundaries
-              of data and AI. Our journey is fueled by the expertise and support
+              of DevOps and AI. Our journey is fueled by the expertise and support
               of these amazing partners.
             </p>
             <div className={styles.logoContainer}>
@@ -176,7 +178,7 @@ const Landing = () => {
             </div>
             <div className={styles.hexbaneContainer}>
               <p className={styles.title2}>
-                Built using HEXBANE 🐦‍🔥 Architecture
+                Built using Gemini AI
               </p>
               {/* <a
                 href="https://github.com/shivaraj65/hexbane"
@@ -253,13 +255,13 @@ const Landing = () => {
             <div className={styles.text}>
               <p>
                 Ready to transform your data journey? Follow these simple steps
-                to get started with DataCompass and unlock the full potential of
+                to get started with Devops Auto pilot and unlock the full potential of
                 your data with our cutting-edge LLM technology.
               </p>
               <p>
                 <span className={styles.badge}>Ready to Begin?</span> Sign Up
-                Now and start your journey with DataCompass today. Empower your
-                data, make smarter decisions, and achieve your goals with ease.
+                Now and start your journey with Devops Auto pilot today. Empower your
+                devops, make smarter decisions, and achieve your goals with ease.
               </p>
             </div>
 
@@ -279,7 +281,7 @@ const Landing = () => {
 
       <footer className={styles.footer}>
         <div className={styles.contactsContainer}>
-          <img src={appInfo?.logo} className={styles.appLogo} />
+          <img src={mainLogo.src} className={styles.appLogo} />
           <div className={styles.mediaIconsContainer}>
             <MailOutlined className={styles.mediaIcons} />
             <GithubOutlined className={styles.mediaIcons} />
@@ -287,7 +289,7 @@ const Landing = () => {
           </div>
         </div>
         <p className={styles.madeIn}>
-          Made with 💖 in INDIA | Built with HEXBANE 🐦‍🔥
+          Made with 💖 in INDIA | Made for India 🐦‍🔥
         </p>
         <p className={styles.copyRText}>
           Copyright © Then, Now & Forever - Team CuriosityEngine

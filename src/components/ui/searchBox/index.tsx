@@ -79,8 +79,8 @@ const SearchBox = ({
 
   const options = [
     { label: "Simple", value: "simple" },
-    { label: "RAG", value: "rag" },
-    { label: "Data Wizard", value: "data_wizard" },
+    // { label: "RAG", value: "rag" },
+    // { label: "Data Wizard", value: "data_wizard" },
   ];
 
   const handleKeyDown = async (event: any) => {
@@ -250,7 +250,7 @@ const SearchBox = ({
                 value={chatType}
                 optionType="button"
               />
-              <Select
+              {/* <Select
                 className={styles.modelSelection}
                 size="small"
                 value={chatModel.value}
@@ -260,7 +260,7 @@ const SearchBox = ({
                   { value: "gpt-3.5-turbo", label: "GPT 3.5" },
                   { value: "gpt-4o-mini", label: "GPT 4o mini" },
                 ]}
-              />
+              /> */}
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: "3px" }}>

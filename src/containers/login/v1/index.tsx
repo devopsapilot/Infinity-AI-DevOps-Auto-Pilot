@@ -10,7 +10,8 @@ import { Input } from "antd";
 import { useRouter } from "next/router";
 import { CloseOutlined } from "@ant-design/icons";
 import { loginApi } from "@/redux/asyncApi/users";
-
+import heroLogo from "../../../assets/logo/devopsAPLogo.jpg"
+import mainLogo from "../../../assets/logo/autopilotLogoMain.png"
 const Login = () => {
   const router = useRouter();
 
@@ -97,7 +98,7 @@ const Login = () => {
         <hr /> */}
         <div className={styles.passwordLoginContV1}>
           <div className={styles.titleContainer}>
-            {appInfo && <img src={appInfo?.logo} className={styles.logo} />}
+            {appInfo && <img src={mainLogo?.src} className={styles.logo} />}
           </div>
           <div className={styles.componentWrapper}>
             <p className={`${styles.label}`}>Email</p>

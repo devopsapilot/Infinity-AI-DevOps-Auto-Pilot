@@ -132,15 +132,15 @@ const Page0 = ({ chat }: props) => {
   };
 
   return (
-    <div className={styles.page1Container}>
+    <div className={styles.page1Container} style={{ backgroundColor: '#FFDAB9' }} >
       {chat.currentChat && chat.currentChat.length > 0 ? (
-        <div className={styles.chatPage}>
-          <div className={styles.chatHeader}>
-            <div className={styles.tagContainer}>
-              {chat.chatType && <Tag>{chat.chatType.toUpperCase()}</Tag>}
-              {chat.chatModel.value && <Tag>{chat.chatModel.value}</Tag>}
-              {chat.chatTemperature && <Tag>{chat.chatTemperature}</Tag>}
-              {chat.rag.value && <Tag>{chat.rag.value.toUpperCase()}</Tag>}
+        <div className={styles.chatPage} style={{ backgroundColor: '#FFDAB9' }} >
+          <div className={styles.chatHeader} style={{ backgroundColor: '#FFDAB9' }} >
+            <div className={styles.tagContainer} style={{ backgroundColor: '#FFDAB9' }} >
+              {chat.chatType && <Tag style={{ backgroundColor: '#FFDAB9' }} >{chat.chatType.toUpperCase()}</Tag>}
+              {chat.chatModel.value && <Tag style={{ backgroundColor: '#FFDAB9' }} >{chat.chatModel.value}</Tag>}
+              {chat.chatTemperature && <Tag style={{ backgroundColor: '#FFDAB9' }} >{chat.chatTemperature}</Tag>}
+              {chat.rag.value && <Tag style={{ backgroundColor: '#FFDAB9' }} >{chat.rag.value.toUpperCase()}</Tag>}
             </div>
           </div>
           <ChatBox currentChat={chat.currentChat} />

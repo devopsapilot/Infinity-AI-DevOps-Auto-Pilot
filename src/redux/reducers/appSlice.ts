@@ -1,8 +1,4 @@
-/**
- * this slice will contain application level data.
- * -> user infos and app info
- */
-
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   userInfotypes,
   appInfotypes,
@@ -10,20 +6,22 @@ import {
   loginTypes,
   UpdateUserTypes,
 } from "@/utils/types/appTypes";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { loginApi, signupApi, updateUserApi } from "../asyncApi/users";
-import b from "../../assets/logo/devopsAPLogo.jpg"
-interface app {
+import {
+  loginApi,
+  signupApi,
+  updateUserApi,
+} from "../asyncApi/users";
+
+interface AppState {
   appInfo: appInfotypes | null;
-  // userInfo: userInfotypes | null;
-  userInfo:any;
+  userInfo: userInfotypes | null;
   signup: signupTypes;
   login: loginTypes;
   updateUser: UpdateUserTypes;
   theme: string;
 }
 
-const initialState: app = {
+const initialState: AppState = {
   appInfo: {
     name: "DevOpsAutoPilot",
     logo: "logo/png/logo-no-background.png",
@@ -80,8 +78,11 @@ const appSlice = createSlice({
         error: null,
       };
     },
+    logout(state) {
+      state.userInfo = null;
+      // Optionally, reset other state properties related to user session
+    },
   },
-
   extraReducers: (builder) => {
     builder
       .addCase(signupApi.pending, (state) => {
@@ -137,5 +138,6 @@ export const {
   resetSignup,
   resetLogin,
   resetUpdateUser,
+  logout,
 } = appSlice.actions;
 export default appSlice.reducer;

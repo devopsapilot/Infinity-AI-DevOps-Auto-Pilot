@@ -19,7 +19,7 @@ COPY . .
 RUN npx prisma generate
 
 # Build Next.js project
-RUN npm run build
+# RUN npm run build
 
 # Expose Next.js default port
 EXPOSE 3000

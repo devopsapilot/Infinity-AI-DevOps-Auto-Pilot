@@ -1,0 +1,91 @@
+@use "../../theme/appTheme.scss";
+
+.loginContainerV1 {
+  height: 100svh;
+  width: 100vw;
+  background-image: url("../../../assets/images//login/loginV18.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .closeFloater {
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: #c55757;
+    cursor: pointer;
+  }
+
+  .formContainerV1 {
+    max-height: 75%;
+    width: 30%;
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 0 #3b3b3b57;
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    background-color: #a0a0a018;
+
+    .titleContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      .logo{
+        width: 50%;        
+      }
+      .title {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: appTheme.$primary-100;
+      }
+    }    
+
+    .passwordLoginContV1 {
+      display: block;
+
+      .componentWrapper {
+        margin: 0rem 0 1rem;
+
+        .label {
+          margin: 0 0 0.4rem;
+          font-weight: 500;
+          color: appTheme.$primary-100;
+        }
+      }
+      .loginButton {
+        font-weight: 700;
+        margin-top: 0.6rem;
+        letter-spacing: 0.3rem;
+      }
+    }
+    .footer{
+      text-align: center;
+      margin-top: 1rem;      
+      .footerText{
+        color: appTheme.$dark-500;
+        font-weight: 500;
+        .linkText{
+          text-decoration: underline;
+          cursor: pointer;
+          color: #0075fc;
+          font-weight: 700;
+        }
+        .linkText2{
+          text-decoration: underline;
+          cursor: pointer;
+          color: appTheme.$dark-500;
+          font-weight: 700;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String   @id @map("_id") 
+  email String  @unique
+  name  String
+  password String
+  isEditable Json
+  createdAt DateTime 
+  authOrigin String
+  llmApiKeys Json
+  databases Json
+  accountStatus Boolean
+  rag Json
+}
+
+model Thread {
+  id    String   @id @map("_id")
+  userId String 
+  title String
+  chatType String
+  isDeleted Boolean
+  createdAt DateTime  
+  databaseConnection String?
+  ragType String?
+  externalRag String?
+}
+
+model Message {
+  id    String   @id @map("_id")
+  threadId String
+  role String 
+  context Json
+  metrics Json?
+  isDeleted Boolean
+  createdAt DateTime
+}
+
+model PromptStore {
+  id    String   @id @map("_id")
+  userId String
+  context Json
+  promptType String
+  isDeleted Boolean
+  createdAt DateTime
+}

@@ -1,0 +1,183 @@
+@use "appTheme";
+
+* {
+  [data-theme="light"] {
+    .ant-card {
+      color: appTheme.$dark-100 !important;
+      background-color: appTheme.$mix-light-600;
+      border: 1.5px solid appTheme.$mix-light-400;
+
+      .ant-card-meta {
+        .ant-card-meta-avatar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .anticon {
+            font-size: 1.8rem;
+            color: appTheme.$primary-200;
+          }
+        }
+        .ant-card-meta-detail {
+          .ant-card-meta-title {
+            color: appTheme.$primary-400;
+          }
+          .ant-card-meta-description {
+            color: appTheme.$mix-dark-400;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+    .ant-breadcrumb {
+      .ant-breadcrumb-link {
+        color: appTheme.$dark-500 !important;
+      }
+      .ant-breadcrumb-separator {
+        color: appTheme.$primary-100 !important;
+      }
+    }
+    .ant-select {
+      .ant-select-selector {
+        color: appTheme.$primary-400 !important;
+        background-color: appTheme.$mix-light-600 !important;
+        .ant-select-selection-item {
+          font-weight: 600 !important;
+        }
+      }
+    }
+    .ant-radio-group {
+      .ant-radio-button-wrapper {
+        font-weight: 500;
+        color: appTheme.$primary-500 !important;
+        background-color: appTheme.$mix-light-500 !important;
+        border: 1px dashed appTheme.$mix-light-100 !important;
+      }
+      .ant-radio-button-wrapper:not(:first-child)::before {
+        background-color: appTheme.$mix-light-100 !important;
+        background-color: transparent;
+      }
+      .ant-radio-button-wrapper-checked {
+        font-weight: 600;
+        color: appTheme.$primary-300 !important;
+        border: 1px dashed appTheme.$primary-300 !important;
+        background-color: appTheme.$mix-light-400 !important;
+      }
+    }
+  }
+
+  [data-theme="dark"] {
+    .ant-card {
+      color: appTheme.$light-100 !important;
+      background-color: appTheme.$mix-dark-200;
+      border: 1.5px solid appTheme.$mix-dark-200;
+
+      .ant-card-meta {
+        .ant-card-meta-avatar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .anticon {
+            font-size: 1.8rem;
+            color: appTheme.$primary-200;
+          }
+        }
+        .ant-card-meta-detail {
+          .ant-card-meta-title {
+            color: appTheme.$primary-400;
+          }
+          .ant-card-meta-description {
+            color: appTheme.$light-600;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+    .ant-breadcrumb {
+      .ant-breadcrumb-link {
+        color: appTheme.$light-500 !important;
+      }
+      .ant-breadcrumb-separator {
+        color: appTheme.$primary-100 !important;
+      }
+    }
+    .ant-select {
+      .ant-select-selector {
+        color: appTheme.$primary-500 !important;
+        background-color: appTheme.$mix-dark-300 !important;
+        border: 1px dashed appTheme.$primary-500 !important;
+        // border: none;
+        .ant-select-selection-item {
+          font-weight: 600 !important;
+        }
+      }
+    }
+    .ant-radio-group {
+      .ant-radio-button-wrapper {
+        font-weight: 500;
+        color: appTheme.$primary-500 !important;
+        background-color: appTheme.$mix-dark-100 !important;
+        border: 1px dashed appTheme.$mix-dark-200 !important;
+      }
+      .ant-radio-button-wrapper:not(:first-child)::before {
+        background-color: appTheme.$mix-dark-100 !important;
+      }
+      .ant-radio-button-wrapper-checked {
+        font-weight: 600;
+        color: appTheme.$primary-300 !important;
+        border: 1px dashed appTheme.$primary-300 !important;
+        background-color: appTheme.$mix-dark-300 !important;
+      }
+    }
+  }
+}
+
+//overrides for the popups that falls overside the data-theme wrapper.
+.ant-select-dropdown {
+  background-color: appTheme.$light-200 !important;
+  .ant-select-item-option {
+    background-color: appTheme.$mix-light-600 !important;
+    color: appTheme.$mix-dark-600 !important;
+    font-weight: 600 !important;
+    margin: 1.5px 0;
+  }
+  .ant-select-item-option-active {
+    background-color: appTheme.$mix-light-300 !important;
+    font-weight: 700 !important;
+    color: appTheme.$mix-dark-400 !important;
+    margin: 1.5px 0;
+  }
+}
+
+//overrrideing for landing page only
+.landingPageV1 {
+  .ant-card {
+    color: appTheme.$dark-100 !important;
+    background-color: appTheme.$mix-light-600;
+    border: 1.5px solid appTheme.$mix-light-400;
+
+    .ant-card-meta {
+      .ant-card-meta-avatar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .anticon {
+          font-size: 1.8rem;
+          color: appTheme.$primary-200;
+        }
+      }
+      .ant-card-meta-detail {
+        .ant-card-meta-title {
+          color: appTheme.$primary-100;
+          font-size: 1.3rem;
+        }
+        .ant-card-meta-description {
+          color: appTheme.$mix-dark-400;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

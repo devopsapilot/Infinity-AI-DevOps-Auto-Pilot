@@ -1,0 +1,176 @@
+/**
+ * light and dark theme config file
+ * https://colorffy.com/dark-theme-generator -- use the link to generate colors
+ */
+
+/** PRIMARY COLORS */
+/** PRIMARY COLORS - DARK ORANGE */
+$primary-100: #b55400;  // Darkest Orange
+$primary-200: #c76514;
+$primary-300: #d8772d;
+$primary-400: #e78845;
+$primary-500: #f4995d;
+$primary-600: #ffab75;
+
+
+/** light theme colors */
+$light-100: #f9f9f9;
+$light-200: #ededed;
+$light-300: #e3e3e3;
+$light-400: #cdcdcd;
+$light-500: #b4b4b4;
+$light-600: #9b9b9b;
+
+//dark theme colors:
+$dark-100: #090909;
+$dark-200: #0e1012;
+$dark-300: #202020;
+$dark-400: #676767;
+$dark-500: #9b9b9b;
+$dark-600: #b4b4b4;
+
+// primary - dark mixed theme colors:
+$mix-dark-100: #142617;
+$mix-dark-200: #2a3b2c;
+$mix-dark-300: #415043;
+$mix-dark-400: #5a675ba4;
+$mix-dark-500: #737e74;
+$mix-dark-600: #8d978e;
+
+//primary - light mixed theme colors
+$mix-light-100: #b5cdb8;
+$mix-light-200: #bdd2c0;
+$mix-light-300: #c5d8c7;
+$mix-light-400: #cddecf;
+$mix-light-500: #d6e3d7;
+$mix-light-600: #dee9df7e;
+
+
+// --rt-color-white: #fff;
+//     --rt-color-dark: #222;
+//     --rt-color-success: #8dc572;
+// mongo green: color: #00ed64;
+//     --rt-color-error: #be6464;
+//     --rt-color-warning: #f0ad4e;
+//     --rt-color-info: #337ab7;
+
+* {
+  .primary {
+    color: $primary-100 !important;
+  }
+  .primary-100 {
+    color: $primary-100 !important;
+  }
+  .primary-200 {
+    color: $primary-200 !important;
+  }
+  .primary-300 {
+    color: $primary-300 !important;
+  }
+  .primary-400 {
+    color: $primary-400 !important;
+  }
+  .primary-500 {
+    color: $primary-500 !important;
+  }
+  .primary-600 {
+    color: $primary-600 !important;
+  }
+  .light {
+    color: $light-100 !important;
+  }
+
+  .light-100 {
+    color: $light-100 !important;
+  }
+
+  .light-200 {
+    color: $light-200 !important;
+  }
+
+  .light-300 {
+    color: $light-300 !important;
+  }
+
+  .light-400 {
+    color: $light-400 !important;
+  }
+
+  .light-500 {
+    color: $light-500 !important;
+  }
+
+  .light-600 {
+    color: $light-600 !important;
+  }
+
+  .dark {
+    color: $dark-100 !important;
+  }
+  .dark-100 {
+    color: $dark-100 !important;
+  }
+  .dark-200 {
+    color: $dark-200 !important;
+  }
+  .dark-300 {
+    color: $dark-300 !important;
+  }
+  .dark-400 {
+    color: $dark-400 !important;
+  }
+  .dark-500 {
+    color: $dark-500 !important;
+  }
+  .dark-600 {
+    color: $dark-600 !important;
+  }
+
+  [data-theme="light"] {
+    //----------- background-color styles -----------
+    .bg-primary {
+      background-color: $light-100 !important;
+    }
+    .bg-secondary {
+      background-color: $light-300 !important;
+    }
+    .bg-accent {
+      background-color: $primary-600 !important;
+    }
+
+    //----------- background-color styles -----------
+    .primaryText {
+      color: $dark-200 !important;
+    }
+    .secondaryText {
+      color: $dark-300 !important;
+    }
+    .accentText {
+      color: $primary-100 !important;
+    }
+  }
+
+  [data-theme="dark"] {
+    //----------- background-color styles -----------
+    .bg-primary {
+      background-color: $dark-200 !important;
+    }
+    .bg-secondary {
+      background-color: $dark-300 !important;
+    }
+    .bg-accent {
+      background-color: $primary-600 !important;
+    }
+
+    //----------- background-color styles -----------
+    .primaryText {
+      color: $light-200 !important;
+    }
+    .secondaryText {
+      color: $light-300 !important;
+    }
+    .accentText {
+      color: $primary-100 !important;
+    }
+  }
+}

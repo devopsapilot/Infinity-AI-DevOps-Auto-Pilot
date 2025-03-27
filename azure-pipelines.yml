@@ -9,19 +9,24 @@ resources:
 - repo: self
 
 variables:
-  -  group:  'demo'
-  # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '97db9607-4576-409e-8d1a-b73b8ffce00b'
-  imageRepository: 'devopsautopilot'
-  containerRegistry: 'myreactacr.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+  - group: demo  # Variable group from Azure DevOps
+  - name: dockerRegistryServiceConnection
+    value: '97db9607-4576-409e-8d1a-b73b8ffce00b'
+  - name: imageRepository
+    value: 'devopsautopilot'
+  - name: containerRegistry
+    value: 'myreactacr.azurecr.io'
+  - name: dockerfilePath
+    value: '$(Build.SourcesDirectory)/Dockerfile'
+  - name: tag
+    value: '$(Build.BuildId)'
+  - name: vmImageName
+    value: 'ubuntu-latest'
+  - name: appName
+    value: 'devopsautopilotai'
+  - name: resourceGroup
+    value: 'devops-auto-pilot'
 
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
-  appName: 'devopsautopilotai'
-  resourceGroup: 'devops-auto-pilot'
 
 stages:
 - stage: Build

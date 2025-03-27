@@ -9,6 +9,7 @@ resources:
 - repo: self
 
 variables:
+  -  group:  'demo'
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '97db9607-4576-409e-8d1a-b73b8ffce00b'
   imageRepository: 'devopsautopilot'

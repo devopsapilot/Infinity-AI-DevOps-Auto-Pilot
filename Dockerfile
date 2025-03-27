@@ -15,6 +15,8 @@ COPY prisma ./prisma
 # Copy the rest of the application code
 COPY . .
 
+COPY .env.local ./
+
 # Generate Prisma client
 RUN npx prisma generate
 

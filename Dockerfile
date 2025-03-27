@@ -8,8 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --omit=dev
-
+RUN npm install 
 # Copy Prisma schema before running `npx prisma generate`
 COPY prisma ./prisma
 
